@@ -2,7 +2,11 @@
 
 Web-based 4D + 5D construction phasing simulation for the Snowdon Towers structural model. Built on Autodesk Platform Services (APS / Forge) Viewer.
 
-**Live demo:** https://aps4d.vamsipadala.com (or your Vercel URL)
+🔗 **Live demo:** https://aps4d.vamsipadala.com
+
+![4D/5D Construction Simulation — Snowdon Towers](./screenshot.png)
+
+> Mid-May 2026 data date. Substructure complete (green), L1 walls completed late (orange), L2 framing in progress (yellow), some activities delayed (red). KPI sidebar + bottom Gantt strip update in real time as you scrub the timeline.
 
 ## Features
 
