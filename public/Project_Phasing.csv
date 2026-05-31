@@ -1,0 +1,45 @@
+Activity,Start,Duration,Finish,Type,Description
+MOB-SITE,1/5/26,7,1/13/26,Construct,"Install Site setup, hoarding, welfare at Mobilization (1 elements)"
+ER-CIV,1/14/26,11,1/28/26,Construct,"Install Floors, Walls at Entrance Ramp (11 elements)"
+FT-FND,1/14/26,22,2/12/26,Construct,Install Structural Foundations at Footing (90 elements)
+TOF-COL,2/13/26,5,2/19/26,Construct,Install Structural Columns at Top of Footing (16 elements)
+TOF-FLR,2/20/26,11,3/6/26,Construct,Install Floors at Top of Footing (4 elements)
+TOF-WALL,2/23/26,15,3/13/26,Construct,Install Walls at Top of Footing (32 elements)
+TOF-GEN,3/16/26,7,3/24/26,Construct,Install Generic Models at Top of Footing (8 elements)
+L1-COL,3/25/26,9,4/6/26,Construct,Install Structural Columns at L1 (28 elements)
+L1-FRM,4/1/26,10,4/14/26,Construct,"Install Structural Beam Systems, Structural Framing at L1 (42 elements)"
+L1-FLR,4/16/26,10,4/29/26,Construct,Install Floors at L1 (3 elements)
+L1-WALL,4/20/26,12,5/5/26,Construct,Install Walls at L1 (21 elements)
+L1-GEN,5/6/26,7,5/14/26,Construct,Install Generic Models at L1 (15 elements)
+M1-FRM,4/8/26,10,4/21/26,Construct,Install Structural Framing at M1 (19 elements)
+L2-FRM,4/15/26,10,4/28/26,Construct,Install Structural Framing at L2 (84 elements)
+L2-FLR,4/30/26,9,5/12/26,Construct,Install Floors at L2 (2 elements)
+L2-WALL,5/4/26,10,5/15/26,Construct,Install Walls at L2 (17 elements)
+L2-GEN,5/18/26,8,5/27/26,Construct,Install Generic Models at L2 (16 elements)
+L3-COL,4/22/26,5,4/28/26,Construct,Install Structural Columns at L3 (3 elements)
+L3-FRM-1,4/27/26,13,5/13/26,Construct,"Install Structural Beam Systems, Structural Framing at L3 (104 elements)"
+L3-FRM-2,5/4/26,13,5/20/26,Construct,"Install Structural Beam Systems, Structural Framing at L3 (105 elements)"
+L3-FLR,5/22/26,10,6/4/26,Construct,Install Floors at L3 (3 elements)
+L3-WALL,5/25/26,11,6/8/26,Construct,Install Walls at L3 (19 elements)
+L3-GEN,6/9/26,9,6/19/26,Construct,Install Generic Models at L3 (18 elements)
+L4-FRM-1,5/14/26,13,6/1/26,Construct,"Install Structural Beam Systems, Structural Framing at L4 (110 elements)"
+L4-FRM-2,5/20/26,13,6/5/26,Construct,"Install Structural Beam Systems, Structural Framing at L4 (110 elements)"
+L4-FLR,6/8/26,9,6/18/26,Construct,Install Floors at L4 (2 elements)
+L4-WALL,6/11/26,11,6/25/26,Construct,Install Walls at L4 (19 elements)
+L4-GEN,6/26/26,9,7/8/26,Construct,Install Generic Models at L4 (18 elements)
+L5-COL,6/1/26,5,6/5/26,Construct,Install Structural Columns at L5 (5 elements)
+L5-FRM-1,6/5/26,13,6/23/26,Construct,"Install Structural Beam Systems, Structural Framing at L5 (110 elements)"
+L5-FRM-2,6/11/26,13,6/29/26,Construct,"Install Structural Beam Systems, Structural Framing at L5 (111 elements)"
+L5-FLR,7/1/26,10,7/14/26,Construct,Install Floors at L5 (3 elements)
+L5-WALL,7/6/26,11,7/20/26,Construct,Install Walls at L5 (18 elements)
+L5-GEN,7/21/26,7,7/29/26,Construct,Install Generic Models at L5 (6 elements)
+R2-FRM,6/22/26,10,7/3/26,Construct,Install Structural Beam Systems at R2 (14 elements)
+R2-FLR,7/6/26,9,7/16/26,Construct,Install Floors at R2 (2 elements)
+R2-WALL,7/9/26,17,7/31/26,Construct,Install Walls at R2 (37 elements)
+RF2-COL,6/29/26,7,7/7/26,Construct,Install Structural Columns at RF2 (22 elements)
+RF2-FRM-1,7/6/26,10,7/17/26,Construct,Install Structural Framing at RF2 (86 elements)
+RF2-FRM-2,7/13/26,10,7/24/26,Construct,"Install Structural Beam Systems, Structural Framing at RF2 (86 elements)"
+RF2-GEN,7/27/26,9,8/6/26,Construct,Install Generic Models at RF2 (18 elements)
+PR-FRM,7/20/26,10,7/31/26,Construct,Install Structural Framing at Parapet (37 elements)
+PR-FLR,8/3/26,12,8/18/26,Construct,Install Floors at Parapet (5 elements)
+DEMOB-SITE,8/19/26,5,8/25/26,Construct,"Install Strip site, clean-up, handover at Demobilisation (1 elements)"

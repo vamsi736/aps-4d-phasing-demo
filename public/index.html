@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snowdon Towers — 4D/5D Construction Simulation</title>
+
+  <!-- Autodesk Viewer -->
+  <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css">
+  <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <!-- ============== TOP BAR ============== -->
+  <header id="topbar">
+    <div class="brand">
+      <span class="logo">⏱</span>
+      <div class="title">
+        <div class="t1">Snowdon Towers</div>
+        <div class="t2">4D / 5D Construction Simulation</div>
+      </div>
+    </div>
+
+    <div class="credit">
+      <div class="credit-line1">Created by <b>Vamsi Krishna Padala</b></div>
+      <div class="credit-line2">
+        <a href="mailto:pvamsikrishna736@gmail.com" title="Email">✉ pvamsikrishna736@gmail.com</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/vamsipadala/" target="_blank" rel="noopener" title="LinkedIn">in&nbsp;LinkedIn</a>
+      </div>
+    </div>
+
+    <button id="btn-menu" class="mobile-only" title="Open menu">☰</button>
+    <div class="data-date">
+      <label>Data date</label>
+      <input type="date" id="data-date-input">
+    </div>
+    <div class="play-controls">
+      <button id="btn-rewind" title="Jump to project start">⏮</button>
+      <button id="btn-step-back" title="-1 day">◀</button>
+      <button id="btn-play" title="Play / Pause">▶</button>
+      <button id="btn-step-fwd" title="+1 day">▶</button>
+      <button id="btn-end" title="Jump to project finish">⏭</button>
+      <button id="btn-ghost" title="Toggle ghost view of future elements">👻 Ghost</button>
+      <span class="speed">
+        Speed
+        <select id="speed">
+          <option value="200">0.5×</option>
+          <option value="100" selected>1×</option>
+          <option value="50">2×</option>
+          <option value="20">5×</option>
+          <option value="10">10×</option>
+        </select>
+      </span>
+    </div>
+  </header>
+
+  <!-- ============== MAIN LAYOUT ============== -->
+  <main id="main">
+    <!-- Viewer -->
+    <div id="viewer-wrapper">
+      <div id="preview"></div>
+      <!-- floating current-date label -->
+      <div id="floating-date">
+        <span id="floating-date-label">—</span>
+      </div>
+    </div>
+
+    <!-- Mobile drawer backdrop -->
+    <div id="drawer-backdrop"></div>
+
+    <!-- Right sidebar (becomes drawer on mobile) -->
+    <aside id="sidebar">
+      <button id="btn-close-drawer" class="mobile-only" title="Close menu">✕</button>
+      <section class="card">
+        <h3>Status Legend</h3>
+        <ul class="legend">
+          <li><span class="dot s-completed-ontime"></span> Completed On Time</li>
+          <li><span class="dot s-completed-late"></span> Completed Late</li>
+          <li><span class="dot s-inprogress"></span> In Progress (on track)</li>
+          <li><span class="dot s-delayed"></span> Delayed</li>
+          <li><span class="dot s-future"></span> Not Started (hidden)</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>KPIs</h3>
+        <div class="kpi"><span>Project</span><b id="kpi-project">—</b></div>
+        <div class="kpi"><span>Start</span><b id="kpi-start">—</b></div>
+        <div class="kpi"><span>Finish</span><b id="kpi-finish">—</b></div>
+        <div class="kpi"><span>Budget</span><b id="kpi-budget">—</b></div>
+        <div class="kpi"><span>Spent</span><b id="kpi-spent">—</b></div>
+        <div class="kpi"><span>% Complete</span><b id="kpi-pct">—</b></div>
+      </section>
+
+      <section class="card">
+        <h3>Status Counts</h3>
+        <div class="count-row"><span class="dot s-completed-ontime"></span><span>On time</span><b id="cnt-ontime">0</b></div>
+        <div class="count-row"><span class="dot s-completed-late"></span><span>Late</span><b id="cnt-late">0</b></div>
+        <div class="count-row"><span class="dot s-inprogress"></span><span>In progress</span><b id="cnt-inprog">0</b></div>
+        <div class="count-row"><span class="dot s-delayed"></span><span>Delayed</span><b id="cnt-delayed">0</b></div>
+        <div class="count-row"><span class="dot s-future"></span><span>Not started</span><b id="cnt-future">0</b></div>
+      </section>
+
+      <section class="card" id="active-card">
+        <h3>Active Now</h3>
+        <div id="active-list"><em>—</em></div>
+      </section>
+
+      <section class="card credit-card">
+        <h3>Created By</h3>
+        <div class="cc-name">Vamsi Krishna Padala</div>
+        <div class="cc-links">
+          <a href="mailto:pvamsikrishna736@gmail.com">✉ Email</a>
+          <a href="https://www.linkedin.com/in/vamsipadala/" target="_blank" rel="noopener">in LinkedIn</a>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ============== BOTTOM TIMELINE ============== -->
+  <footer id="bottombar">
+    <div id="scrubber-row">
+      <input type="range" id="scrubber" min="0" max="100" value="0">
+      <div id="scrubber-ticks"></div>
+    </div>
+    <div id="activity-strip"></div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>
