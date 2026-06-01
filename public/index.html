@@ -131,6 +131,64 @@
     <div id="activity-strip"></div>
   </footer>
 
-  <script src="/main.js"></script>
+  <!-- WebGL / corporate-network fallback overlay -->
+  <div id="fallback-overlay" style="display:none;">
+    <div class="fb-card">
+      <div class="fb-icon">⚠</div>
+      <h2>3D viewer cannot run on this device</h2>
+      <p>Your network or browser is blocking <b>WebGL</b> (the 3D graphics layer this demo needs).
+      Common cause: corporate browser isolation (Zscaler, Netskope, etc.) or hardware acceleration disabled.</p>
+
+      <div class="fb-actions">
+        <div class="fb-action">
+          <div class="fb-action-title">Open on your phone</div>
+          <p>Works fully on any phone or personal laptop.</p>
+          <img id="fb-qr" alt="Scan QR to open on phone"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://aps4d.vamsipadala.com" />
+          <div class="fb-url">https://aps4d.vamsipadala.com</div>
+        </div>
+
+        <div class="fb-action">
+          <div class="fb-action-title">Preview</div>
+          <a href="/screenshot.png" target="_blank">
+            <img id="fb-screenshot" src="/screenshot.png" alt="4D simulation screenshot"
+              style="max-width:100%;border-radius:4px;border:1px solid #3a3f4a;" />
+          </a>
+          <p style="font-size:11px;color:#8a8f99;margin-top:6px;">Click image to enlarge</p>
+        </div>
+      </div>
+
+      <div class="fb-footer">
+        Created by <b>Vamsi Krishna Padala</b>
+        &nbsp;·&nbsp;
+        <a href="mailto:pvamsikrishna736@gmail.com">Email</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/vamsipadala/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // WebGL detection BEFORE loading main.js / APS viewer
+    (function detectWebGL() {
+      let supported = false;
+      try {
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl2') || canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        supported = !!gl && typeof gl.getParameter === 'function';
+      } catch (e) { supported = false; }
+
+      if (!supported) {
+        document.getElementById('fallback-overlay').style.display = 'flex';
+        // Don't load main.js — viewer would only error
+        return;
+      }
+
+      // WebGL OK — load app
+      const s = document.createElement('script');
+      s.src = '/main.js';
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>
