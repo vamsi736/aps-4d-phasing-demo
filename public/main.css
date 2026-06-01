@@ -135,14 +135,20 @@ html, body {
 #topbar .credit-line2 a:hover { color: #fff; text-decoration: underline; }
 
 #btn-menu {
+  display: none;   /* hidden on desktop; enabled in mobile @media */
   background: linear-gradient(135deg, #00b9f1 0%, #0090c4 100%);
   border: 1px solid #00b9f1; color: #fff;
   font-size: 13px; font-weight: 600;
   padding: 0 14px; height: 42px; min-width: 42px;
   border-radius: 6px; cursor: pointer; margin-left: auto;
-  display: inline-flex; align-items: center; gap: 8px;
+  align-items: center; gap: 8px;
   box-shadow: 0 0 0 0 rgba(0,185,241,0.6);
-  animation: menuPulse 2.5s ease-in-out infinite;
+}
+@media (max-width: 768px) {
+  #btn-menu {
+    display: inline-flex;
+    animation: menuPulse 2.5s ease-in-out infinite;
+  }
 }
 #btn-menu .menu-icon { font-size: 18px; line-height: 1; }
 #btn-menu .menu-label { font-size: 12px; letter-spacing: 0.4px; }
@@ -191,7 +197,10 @@ body.drawer-open #btn-menu { animation: none; }
   position: absolute; inset: 0;
   background: rgba(0,0,0,0.55); z-index: 99;
 }
-body.drawer-open #drawer-backdrop { display: block; }
+/* Backdrop only meaningful on mobile (drawer pattern). Never show on desktop. */
+@media (max-width: 768px) {
+  body.drawer-open #drawer-backdrop { display: block; }
+}
 #sidebar .card {
   background: #2a2d35; border-radius: 6px;
   padding: 12px; margin-bottom: 10px;
